@@ -1,0 +1,39 @@
+{
+	"name": "sylica-backend",
+	"version": "1.0.0",
+	"description": "REST API for Sylica - An E-commerce platform for electronics",
+	"main": "server.js",
+	"Author": "Zeal Patel, Mehidi Shohag, Saiful Islam, Joy Biswas, MD Islam",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"server": "nodemon --es-module-specifier-resolution=node src/server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/saifulislamdev/sylica-backend.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/saifulislamdev/sylica-backend/issues"
+	},
+	"homepage": "https://github.com/saifulislamdev/sylica-backend#readme",
+	"type": "module",
+	"dependencies": {
+		"@hapi/joi": "^17.1.1",
+		"bcryptjs": "^2.4.3",
+		"body-parser": "^1.19.0",
+		"config": "^3.3.6",
+		"cors": "^2.8.5",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.1",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^6.0.10",
+		"multer": "^1.4.3",
+		"multer-gridfs-storage": "^5.0.2"
+	},
+	"devDependencies": {
+		"jest": "^27.2.5",
+		"nodemon": "^2.0.13"
+	}
+}
