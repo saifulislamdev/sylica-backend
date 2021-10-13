@@ -53,6 +53,13 @@ Create a route file for each model that will conist of the REST methods.
 - Name a PUT/ PATCH middleware as updateModelName
 - Name a DELETE middleware as deleteModelName
 
+## Writing Tests
+
+All unit tests must be written in the same folder as the file that you are testing.
+Create a file with the same name as the file you are writing the tests for but with extension `.test.js`.
+
+See `./src/helpers/math.js` and `./src/helpers/math.test.js` for example.
+
 ## Available scripts
 
 #### `npm run server`
@@ -62,3 +69,7 @@ Starts a nodemon server that watches changes to your JavaScript code and refresh
 It should print `Server started on port 5000` and `MongoDB Connected` if everything ran correctly.
 
 Run this script to make requests using Postman.
+
+#### `npm run test`
+
+Runs all tests with extension `.test.js`
