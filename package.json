@@ -5,8 +5,8 @@
 	"main": "server.js",
 	"Author": "Zeal Patel, Mehidi Shohag, Saiful Islam, Joy Biswas, MD Islam",
 	"scripts": {
-		"test": "jest",
-		"server": "nodemon --es-module-specifier-resolution=node src/server.js"
+		"server": "nodemon --es-module-specifier-resolution=node src/server.js",
+		"test": "jest"
 	},
 	"repository": {
 		"type": "git",
