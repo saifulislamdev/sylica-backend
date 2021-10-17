@@ -1,7 +1,6 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
-import bodyParser from 'body-parser';
 import connectDB from './utils/connectDB';
 
 // import routers
@@ -10,8 +9,8 @@ import authRouter from './routes/auth';
 //init app
 dotenv.config();
 const app = express();
+app.use(express.json());
 app.use(cors());
-app.use(bodyParser.json());
 
 // connect to DB
 connectDB(process.env.DB_URI);
