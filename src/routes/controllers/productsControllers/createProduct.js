@@ -21,6 +21,8 @@ const validationSchema = Joi.object({
 	isInStock: Joi.boolean(),
 	categories: Joi.array().items(Joi.string()),
 	subCategories: Joi.array().items(Joi.string()),
+	price: Joi.number(),
+	sale: Joi.number(),
 	specifications: Joi.array().items(specsTableValidation),
 });
 
@@ -35,6 +37,8 @@ const createProduct = async (req, res) => {
 			isInStock,
 			categories,
 			subCategories,
+			price,
+			sale,
 			specifications,
 		} = await validateData(req, res, validationSchema);
 
@@ -47,6 +51,8 @@ const createProduct = async (req, res) => {
 			isInStock,
 			categories,
 			subCategories,
+			price,
+			sale,
 			specifications,
 		});
 
