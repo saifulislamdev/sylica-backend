@@ -5,6 +5,7 @@ import connectDB from './utils/connectDB';
 
 // import routers
 import authRouter from './routes/auth';
+import productsRouter from './routes/products';
 
 //init app
 dotenv.config();
@@ -19,6 +20,7 @@ app.get('/', (req, res) => res.json({ msg: 'Welcome to Sylica REST API' }));
 
 // define router paths
 app.use('/api/auth', authRouter);
+app.use('/api/products', productsRouter);
 
 const PORT = process.env.PORT || 5000;
 
