@@ -36,7 +36,6 @@ describe('authenticateToken', () => {
 		};
 
 		const next = jest.fn();
-
 		jwt.verify = jest.fn().mockImplementation(() => {
 			throw new Error('Invalid token');
 		});
@@ -62,11 +61,9 @@ describe('authenticateToken', () => {
 		};
 
 		const next = jest.fn();
-
 		jwt.verify = jest.fn().mockReturnValueOnce({ user: { _id: '1234' } });
 
 		authenticateToken(req, res, next);
-
 		expect(next).toHaveBeenCalled();
 	});
 });
