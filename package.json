@@ -6,6 +6,7 @@
 	"Author": "Zeal Patel, Mehidi Shohag, Saiful Islam, Joy Biswas, MD Islam",
 	"scripts": {
 		"server": "nodemon --es-module-specifier-resolution=node src/server.js",
+		"start": "node --es-module-specifier-resolution=node src/server.js",
 		"test": "jest --coverage"
 	},
 	"repository": {
