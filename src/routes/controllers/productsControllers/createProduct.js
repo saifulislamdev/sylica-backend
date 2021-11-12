@@ -3,6 +3,7 @@ import validateData from '../../../helpers/validateData';
 import ProductModel from '../../../models/product';
 
 const imageValidation = Joi.object({
+	altName: Joi.string(),
 	name: Joi.string(),
 	src: Joi.string(),
 });
