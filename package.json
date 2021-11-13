@@ -7,7 +7,7 @@
 	"scripts": {
 		"server": "nodemon --es-module-specifier-resolution=node src/server.js",
 		"start": "npm install && node --es-module-specifier-resolution=node src/server.js",
-		"test": "jest ./src/routes/controllers/productsControllers/getProductsByCategory.test.js --coverage"
+		"test": "jest  --coverage"
 	},
 	"repository": {
 		"type": "git",
