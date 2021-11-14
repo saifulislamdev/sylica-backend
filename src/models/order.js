@@ -42,6 +42,10 @@ const orderSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  status: {
+    type: String,
+    default: 'processing',
+  },
 });
 
 export default mongoose.model('orders', orderSchema);
