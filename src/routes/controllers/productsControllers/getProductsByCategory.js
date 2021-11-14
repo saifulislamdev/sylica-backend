@@ -48,7 +48,7 @@ const getProductsByCategory = async (req, res) => {
 
 		const products = await ProductModel.find(query);
 
-		if (products.length === 0)
+		if (!products || products.length === 0)
 			return res.status(404).json({ msg: 'Products not found' });
 
 		return res.status(200).json({ products });
