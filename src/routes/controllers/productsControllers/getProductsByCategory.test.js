@@ -1,4 +1,4 @@
-import mongoose, { mongo } from 'mongoose';
+import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import connectDB from '../../../utils/connectDB';
 import ProductModel from '../../../models/product';
