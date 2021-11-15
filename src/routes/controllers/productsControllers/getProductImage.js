@@ -27,8 +27,7 @@ const getProductImage = (req, res) => {
 			// check if image
 			if (
 				file.contentType === 'image/jpeg' ||
-				file.contentType === 'image/png' ||
-				file.contentype === 'img/png'
+				file.contentType === 'image/png'
 			) {
 				// Read output to browser
 				const readStream = gfs.createReadStream({ filename: file.filename });
