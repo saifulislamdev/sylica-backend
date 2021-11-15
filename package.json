@@ -11,7 +11,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/fdsaifulislamdev/sylica-backend.git"
+		"url": "git+https://github.com/saifulislamdev/sylica-backend.git"
 	},
 	"author": "",
 	"license": "ISC",
