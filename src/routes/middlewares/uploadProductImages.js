@@ -43,7 +43,7 @@ const storage = new GridFsStorage({
 					req.body.images.push({
 						altName: file.originalname,
 						name: filename,
-						src: `${process.env.SERVICE_PROXY}/products/images/${filename}`,
+						src: `/products/images/${filename}`,
 					});
 
 					resolve(fileInfo);
