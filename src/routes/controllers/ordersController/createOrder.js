@@ -3,7 +3,7 @@ import OrderModel from '../../../models/order';
 import Joi from '@hapi/joi';
 import validateData from '../../../helpers/validateData';
 
-const AddressValidation = Joi.object({
+const addressValidation = Joi.object({
   address1: Joi.string(),
   address2: Joi.string(),
   city: Joi.string(),
@@ -17,9 +17,9 @@ const productsPurchasedValidation = Joi.object({
 });
 //user: Joi.string(),
 const ValidationSchema = Joi.object({
-
-  shippingAdress: AddressValidation,
-  billingAdress: AddressValidation,
+  
+  shippingAdress: addressValidation,
+  billingAdress: addressValidation,
   totalAmount: Joi.number(),
   productsPurchased: Joi.array().items(productsPurchasedValidation),
 });
