@@ -24,7 +24,7 @@ app.get('/', (req, res) => res.json({ msg: 'Welcome to Sylica REST API' }));
 app.use('/api/auth', authRouter);
 app.use('/api/products', productsRouter);
 app.use('/api/checkout', checkoutRouter);
-app.use('/api/orders',authenticateToken,orderRouter);
+app.use('/api/orders', orderRouter);
 
 const PORT = process.env.PORT || 5000;
 
