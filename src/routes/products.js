@@ -6,6 +6,8 @@ import getProducts from './controllers/productsControllers/getProducts';
 import getProductByID from './controllers/productsControllers/getProductByID';
 import getProductsByCategory from './controllers/productsControllers/getProductsByCategory';
 import getProductImage from './controllers/productsControllers/getProductImage';
+import patchUpdateQuantity from './controllers/productsControllers/patchUpdateQuantity';
+import authenticateToken from './middlewares/authenticateToken';
 const router = Router();
 
 router.post('/', uploadProductImages.array('images'), createProduct);
@@ -13,4 +15,5 @@ router.get('/getProducts', getProducts);
 router.get('/:productID', getProductByID);
 router.get('/', getProductsByCategory);
 router.get('/images/:filename', getProductImage);
+router.patch('/:productID', authenticateToken, patchUpdateQuantity);
 export default router;
