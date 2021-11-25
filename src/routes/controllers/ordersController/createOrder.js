@@ -17,7 +17,6 @@ const productsPurchasedValidation = Joi.object({
 });
 //user: Joi.string(),
 const ValidationSchema = Joi.object({
-  
   shippingAdress: addressValidation,
   billingAdress: addressValidation,
   totalAmount: Joi.number(),

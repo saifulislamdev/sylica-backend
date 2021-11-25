@@ -9,6 +9,7 @@ import checkoutRouter from './routes/checkout';
 import orderRouter from './routes/orders';
 import authenticateToken from './routes/middlewares/authenticateToken';
 
+
 //init app
 dotenv.config();
 const app = express();
@@ -25,6 +26,7 @@ app.use('/api/auth', authRouter);
 app.use('/api/products', productsRouter);
 app.use('/api/checkout', checkoutRouter);
 app.use('/api/orders', orderRouter);
+
 
 const PORT = process.env.PORT || 5000;
 
