@@ -10,7 +10,12 @@ import patchUpdateQuantity from './controllers/productsControllers/patchUpdateQu
 import authenticateToken from './middlewares/authenticateToken';
 const router = Router();
 
-router.post('/', uploadProductImages.array('images'), createProduct);
+router.post(
+	'/',
+	authenticateToken,
+	uploadProductImages.array('images'),
+	createProduct
+);
 router.get('/getProducts', getProducts);
 router.get('/:productID', getProductByID);
 router.get('/', getProductsByCategory);
