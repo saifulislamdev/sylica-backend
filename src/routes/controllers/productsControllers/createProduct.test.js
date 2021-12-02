@@ -1,5 +1,6 @@
 import ProductModel from '../../../models/product';
 import createProduct from './createProduct';
+import mongoose from 'mongoose';
 
 describe('createProduct', () => {
 	afterEach(() => jest.clearAllMocks());
@@ -8,6 +9,9 @@ describe('createProduct', () => {
 		const req = {
 			body: {
 				title: 'Apple MacBook Pro 2021',
+			},
+			user: {
+				id: mongoose.Types.ObjectId('1'.repeat(24)),
 			},
 		};
 		const res = {
@@ -46,9 +50,9 @@ describe('createProduct', () => {
 				],
 				quantity: 5,
 				isInStock: true,
-				categories: ['laptop'],
-				subCategories: ['macbook'],
-				specifications: [
+				categories: JSON.stringify(['laptop']),
+				subCategories: JSON.stringify(['macbook']),
+				specifications: JSON.stringify([
 					{
 						heading: 'General',
 						rows: [
@@ -56,7 +60,10 @@ describe('createProduct', () => {
 							['GPU', 'M1 Max 32 Cores'],
 						],
 					},
-				],
+				]),
+			},
+			user: {
+				id: mongoose.Types.ObjectId('1'.repeat(24)),
 			},
 		};
 		const res = {

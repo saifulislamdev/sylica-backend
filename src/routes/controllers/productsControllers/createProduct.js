@@ -30,10 +30,12 @@ const validationSchema = Joi.object({
 const createProduct = async (req, res) => {
 	try {
 		// have to parse these three objects because multipart/form-data only accepts strings. So they are first stringified on frontend
-		req.body.categories = JSON.parse(req.body.categories);
-		req.body.subCategories = JSON.parse(req.body.subCategories);
-		req.body.specifications = JSON.parse(req.body.specifications);
-
+		req.body.categories =
+			req.body.categories && JSON.parse(req.body.categories);
+		req.body.subCategories =
+			req.body.subCategories && JSON.parse(req.body.subCategories);
+		req.body.specifications =
+			req.body.specifications && JSON.parse(req.body.specifications);
 		const {
 			title,
 			vendor,
@@ -48,6 +50,8 @@ const createProduct = async (req, res) => {
 			specifications,
 		} = await validateData(req, res, validationSchema);
 
+		const userId = req.user.id;
+
 		const product = new ProductModel({
 			title,
 			vendor,
@@ -60,6 +64,7 @@ const createProduct = async (req, res) => {
 			price,
 			sale,
 			specifications,
+			user: userId,
 		});
 
 		await product.save();
