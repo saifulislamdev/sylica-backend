@@ -1,4 +1,3 @@
-import product from '../../../models/product';
 import ProductModel from '../../../models/product';
 
 const getProductsByUser = async (req, res) => {
@@ -9,7 +8,7 @@ const getProductsByUser = async (req, res) => {
 
 		const products = await ProductModel.find({ user: userId });
 
-		if (!products || product.length === 0)
+		if (products.length === 0)
 			return res.status(404).json({ msg: 'No listings found for this user' });
 
 		return res.status(200).json({ products });
