@@ -6,15 +6,13 @@ const deleteProductByID = async (req, res) => {
 
     if (!productID) return res.status(404).json({ msg: 'Product not found' });
 
-    const userId = req.params.userId;
-
-    if (!userId) return res.status(400).json({ msg: 'Please enter a user id' });
+    const userId = req.user.id;
 
     if (productID.user.toString() !== userId)
       return res.status(401).json({ msg: 'Not authorized' });
 
-
-    await ProductModel.findByIdAndDelete(productID);
+    const product = await ProductModel.findByIdAndDelete(productID);
+    return res.status(200).json({ msg: 'Product deleted succesfully' });
   } catch (error) {
     res.status(500).json({ msg: 'Internal Server Error.' });
   }
