@@ -22,8 +22,6 @@ const getProductImage = (req, res) => {
 		gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
 			if (!file) return res.status(404).json({ msg: 'No file found' });
 
-			console.log(file);
-
 			// check if image
 			if (
 				file.contentType === 'image/jpeg' ||
