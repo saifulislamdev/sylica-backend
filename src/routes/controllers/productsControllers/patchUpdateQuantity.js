@@ -4,7 +4,13 @@ const patchUpdateQuantity = async (req, res) => {
   try {
     const productID = req.params.productID;
     const filter = { _id: productID };
-    const update = { quantity: req.body.quantity };
+    const oldProduct = await ProductModel.findOne(filter);
+
+    if (!product) return res.status(400).json({ msg: 'Product not found' });
+
+    const newQuantity = oldProduct.quantity - req.body.quantity;
+    const update = { quantity: newQuantity };
+
     let product = await ProductModel.findOneAndUpdate(filter, update, {
       new: true,
     });
